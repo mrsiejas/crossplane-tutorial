@@ -1,5 +1,5 @@
 #!/bin/env bash
-set -e
+set -ex
 
 gum style \
 	--foreground 212 --border-foreground 212 --border double \
@@ -37,13 +37,13 @@ Do you have those tools installed?
 # Crossplane #
 ##############
 
-rm -f a-team/intro.yaml
+# rm -f a-team/intro.yaml
 
-git add .
+# git add .
 
-git commit -m "Remove intro"
+# git commit -m "Remove intro"
 
-git push
+# git push
 
 COUNTER=$(kubectl get managed --no-headers | grep -v database \
 	| grep -v object | grep -v release | wc -l)
@@ -56,11 +56,11 @@ while [ $COUNTER -ne 0 ]; do
 		| wc -l)
 done
 
-if [[ "$HYPERSCALER" == "google" ]]; then
+# if [[ "$HYPERSCALER" == "google" ]]; then
 
-	gcloud projects delete $PROJECT_ID --quiet
+# 	gcloud projects delete $PROJECT_ID --quiet
 
-fi
+# fi
 
 #########################
 # Control Plane Cluster #
